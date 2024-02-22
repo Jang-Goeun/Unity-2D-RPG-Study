@@ -2,4 +2,5 @@
 
 * linguist-vendored
 *.cs linguist-vendored=true
-*.js linguist-vendored=false
+*.unity linguist-vendored=true
+*.htm linguist-vendored=false
