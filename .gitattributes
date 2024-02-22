@@ -1,4 +1,5 @@
 /* .gitattributes */
 
 *.cs linguist-detectable=true
+*.unity linguist-detectable=true
 *.html linguist-detectable=false
