@@ -1,2 +1,5 @@
-*.c# linguist-detectable=true
-*.html linguist-detectable=false
+/* .gitattributes */
+
+* linguist-vendored
+*.cs linguist-vendored=true
+*.js linguist-vendored=false
