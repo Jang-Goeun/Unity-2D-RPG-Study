@@ -1,6 +1,5 @@
 /* .gitattributes */
 
-* linguist-vendored
-*.cs linguist-vendored=true
-*.unity linguist-vendored=true
-*.htm linguist-vendored=false
+*.cs linguist-detectable=true
+*.unity linguist-detectable=true
+*.html linguist-detectable=false
