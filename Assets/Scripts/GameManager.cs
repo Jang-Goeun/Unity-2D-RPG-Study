@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public TalkManager talkManager;
+    public QuestManager questManager;
     public GameObject talkPanel;
     public Image portraitImg;
     public Text talkText;
@@ -13,23 +14,29 @@ public class GameManager : MonoBehaviour
     public bool isAction; // 대화창 활성화 여부 체크
     public int talkIndex;
 
+    private void Start()
+    {
+        Debug.Log(questManager.CheckQuest());
+    }
     public void Action(GameObject scanObj)
     {
         scanObject = scanObj;
         ObjData objData = scanObject.GetComponent<ObjData>();
         Talk(objData.id, objData.isNpc);
-
         talkPanel.SetActive(isAction);
     }
 
     void Talk(int id, bool isNpc)
     {
-        string talkData = talkManager.GetTalk(id, talkIndex);
+        //대화 데이터 불러오기
+        int questTalkIndex = questManager.GetQuestTalkIndex(id);
+        string talkData = talkManager.GetTalk(id + questTalkIndex, talkIndex);
 
         if (talkData == null)
         {
             isAction = false;
             talkIndex = 0;
+            Debug.Log(questManager.CheckQuest(id));
             return;
         }
 
